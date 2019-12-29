@@ -1,8 +1,4 @@
-
 <?php 
-
-
-
 $config = array(
 
 	'db' => array(
@@ -21,6 +17,7 @@ $connect = mysqli_connect(
 	$config['db']['password'],
 	$config['db']['name']
 );
+
 
 if($connect == false){
 	echo "fucc";

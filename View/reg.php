@@ -7,12 +7,12 @@
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-	<form class="regform" name="regform" action="../Controller/regscr.php" method="POST">
+	<form class="regform" name="regform" action="../Controller/controller.php" method="POST">
 		
 		
 		<span>Введите имя (От 1 до 20 символов, только русскими буквами)</span><input type="text" required name="name" pattern="^[А-Я]{1}[а-я]{1,19}$"  maxlength="20">
 
-		<span>Введите фамилию (От 1 до 25 символов, только русскими буквами)</span><input type="text" required name="forname" pattern="^[А-Я]{1}[а-я]{1,24}$"  maxlength="25">
+		<span>Введите фамилию (От 1 до 25 символов, только русскими буквами)</span><input type="text" required name="surname" pattern="^[А-Я]{1}[а-я]{1,24}$"  maxlength="25">
 
 		<span>Введите пол </span><input type="radio" required name="gender" value="Мужской">Мужской  <input type="radio" required name="gender" value="Женский">Женский
 

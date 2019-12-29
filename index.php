@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-	<div class="regbutton"><a href="View/reg.php">Регистрация</a></div>
+	<div class="regbutton"><a href="/View/reg.php">Регистрация</a></div>
 	<div class="search">
 
 		<span><?php echo $config['list'] ?></span>
@@ -29,31 +29,27 @@
 		<tr>
 			
 
-			<?php 
-			
-			if($check == true){
-				echo 'Не найдено ни одного пользователя!';
-			}else{ ?>
-				<tr>
-					<td class="id"><?php echo $idst['id']?></td>
-					<td class="name"><?php echo $idst['name']?></td>
-					<td class="surname"><?php echo $idst['surname']?></td>
-					<td class="gender"><?php echo $idst['gender']?></td>
-					<td class="groupnumber"><?php echo $idst['groupnumber']?></td>
-					<td class="email"><?php echo $idst['email']?></td>
-					<td class="points"><?php echo $idst['points']?></td>
-					<td class="birthday"><?php echo $idst['birthday']?></td>
-					<td class="place"><?php echo $idst['place']?></td>
-				</tr>
+			<?php if ( $users == '' ): ?>
+				<td>THERE IS NO USERS</td>
+				<?php else : ?>
+					<?php while($usersOutput = mysqli_fetch_assoc($users)){ ?>
+						<tr>
+							<td class="id"><?php echo $usersOutput['id'] ?></td>
+							<td class="name"><?php echo $usersOutput['name'] ?></td>
+							<td class="surname"><?php echo $usersOutput['surname'] ?></td>
+							<td class="gender"><?php echo $usersOutput['gender'] ?></td>
+							<td class="groupnumber"><?php echo $usersOutput['groupnumber'] ?></td>
+							<td class="email"><?php echo $usersOutput['email'] ?></td>
+							<td class="points"><?php echo $usersOutput['points'] ?></td>
+							<td class="birthday"><?php echo $usersOutput['birthday'] ?></td>
+							<td class="place"><?php echo $usersOutput['place'] ?></td>
+						</tr>
+					<?php }; 
+				endif?>
 
-				<?php 
-			}
-			
-			?>
 
-			
 
-			
-		</table>
-	</body>
-	</html>
+
+			</table>
+		</body>
+		</html>
